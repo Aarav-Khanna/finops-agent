@@ -37,8 +37,8 @@ class AIAnalyzer:
             analysis = response.choices[0].message.content
             
             # Split the response into analysis and solution
-            parts = analysis.split("Proposed Solution:")
-            root_cause = parts[0].replace("Root Cause Analysis:", "").strip()
+            parts = analysis.split("Proposed Solution")
+            root_cause = parts[0].replace("Root Cause Analysis", "").strip()
             solution = parts[1].strip() if len(parts) > 1 else "No solution provided"
 
             return root_cause, solution

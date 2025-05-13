@@ -20,7 +20,7 @@ class FinOpsAgent:
         # Start monitoring Datadog alerts
         while True:
             await self.check_alerts()
-            await asyncio.sleep(60)  # Check every minute
+            await asyncio.sleep(15)  # Check every minute
 
     async def check_alerts(self):
         """Check for new alerts and process them"""
